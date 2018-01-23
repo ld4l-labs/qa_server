@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   # TODO: linkeddata supports a large number of RDF formats (e.g. rdf-xml, json-ld, ttl, etc.)  For production, you may
   # want to include gems for specific formats that you want to support to avoid the overhead of including them all.
-  gem 'linkeddata'
+  # gem 'linkeddata'
 end
 gem 'qa', '~> 2.0'
+gem 'linkeddata'
