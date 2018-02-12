@@ -3,7 +3,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://your.skosmos.server.host/rest/v1/nalt/data?uri={?term_uri}",
+      "template": "http://skosmos.library.cornell.edu/rest/v1/nalt/data?uri={?term_uri}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -31,7 +31,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://your.skosmos.server.host/rest/v1/nalt/search?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
+      "template": "http://skosmos.library.cornell.edu/rest/v1/nalt/search/?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -60,9 +60,9 @@
       "query": "query"
     },
     "results": {
-      "id_predicate":    "http://purl.org/dc/terms/identifier",
+      "id_predicate":       "http://purl.org/dc/terms/identifier",
       "label_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "sort_predicate":  "http://www.w3.org/2004/02/skos/core#prefLabel"
+      "sort_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "context": [
       {
@@ -92,4 +92,3 @@
     ]
   }
 }
-

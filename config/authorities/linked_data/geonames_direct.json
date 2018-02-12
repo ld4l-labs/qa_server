@@ -15,7 +15,7 @@
       ]
     },
     "qa_replacement_patterns": {
-      "term_id": "term_id"
+      "term_id": "term_uri"
     },
     "term_id": "URI",
     "results": {
@@ -43,7 +43,7 @@
           "variable": "username",
           "property": "hydra:freetextQuery",
           "required": true,
-          "default": "demo"
+          "default": "elrayle"
         },
         {
           "@type": "IriTemplateMapping",
