@@ -58,5 +58,5 @@ group :development do
   # want to include gems for specific formats that you want to support to avoid the overhead of including them all.
   # gem 'linkeddata'
 end
-gem 'qa', '~> 2.0'
+gem 'qa', github: 'samvera/questioning_authority', branch: 'fix_ld_term_fetch'
 gem 'linkeddata'
