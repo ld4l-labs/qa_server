@@ -60,9 +60,9 @@
       "query": "query"
     },
     "results": {
-      "id_predicate":       "http://purl.org/dc/terms/identifier",
+      "id_predicate":    "http://purl.org/dc/terms/identifier",
       "label_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "sort_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel"
+      "sort_predicate":  "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "context": [
       {

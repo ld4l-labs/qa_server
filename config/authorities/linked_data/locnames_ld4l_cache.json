@@ -67,12 +67,21 @@
     },
     "results": {
       "label_predicate":    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
-      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
+      "context": {
+        "RWO":  "http://www.loc.gov/mads/rdf/v1#identifiesRWO"
+      }
     },
     "subauthorities": {
-      "personal_name":  "PersonalName",
-      "corporate_name": "CorporateName",
-      "title":          "Title"
+      "person":         "Person",
+      "personal_name":  "Person",
+      "organization":   "Organization",
+      "corporate_name": "Organization",
+      "place":          "Place",
+      "intangible":     "Intangible",
+      "geocoordinates": "GeoCoordinates",
+      "work":           "Work",
+      "title":          "Work"
     }
   }
 }
