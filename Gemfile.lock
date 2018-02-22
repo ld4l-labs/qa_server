@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/samvera/questioning_authority.git
-  revision: 5372e185c5a96832b21d9f620396a8f0175fedc4
+  revision: ec34eb9dd6b156b58d855b5f0705dffa2d4b524a
   branch: min_context
   specs:
-    qa (2.0.0)
+    qa (2.0.1)
       activerecord-import
       deprecation
       faraday

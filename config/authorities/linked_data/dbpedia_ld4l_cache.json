@@ -43,7 +43,7 @@
           "variable": "subauth",
           "property": "hydra:freetextQuery",
           "required": false,
-          "default":  "Person"
+          "default": ""
         },
         {
           "@type": "IriTemplateMapping",

@@ -67,7 +67,7 @@
           "variable": "context",
           "property": "hydra:freetextQuery",
           "required": false,
-          "default": false
+          "default": "false"
         }
       ]
     },

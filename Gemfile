@@ -53,10 +53,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :development do
-  # TODO: linkeddata supports a large number of RDF formats (e.g. rdf-xml, json-ld, ttl, etc.)  For production, you may
-  # want to include gems for specific formats that you want to support to avoid the overhead of including them all.
-  # gem 'linkeddata'
-end
+# Required gems for QA and linked data access
 gem 'qa', github: 'samvera/questioning_authority', branch: 'min_context'
 gem 'linkeddata'
