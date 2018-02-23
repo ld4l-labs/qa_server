@@ -3,7 +3,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/geonames_lookup.jsp?uri={?term_uri}",
+      "template": "http://services.ld4l.org/ld4l_services/nalt_lookup.jsp?uri={?term_uri}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -20,17 +20,18 @@
     },
     "term_id": "URI",
     "results": {
-      "label_predicate":    "http://www.geonames.org/ontology#name",
-      "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
-      "broader_predicate":  "http://www.geonames.org/ontology#parentFeature",
-      "sameas_predicate":   "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
     }
   },
   "search": {
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type": "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/geonames_batch.jsp?query={?query}&entity={?subauth}&maxRecords={?maxRecords}&lang={?lang}",
+      "template": "http://services.ld4l.org/ld4l_services/nalt_batch.jsp?query={?query}&maxRecords={?maxRecords}&entity={?subauth}&lang={?lang}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -66,20 +67,9 @@
       "query":   "query",
       "subauth": "subauth"
     },
-    "language": ["en"],
     "results": {
-      "label_predicate":    "http://www.geonames.org/ontology#name",
-      "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
-      "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
-      "context": {
-        "Parent": "http://www.geonames.org/ontology#parentADM1",
-        "Children": "http://www.geonames.org/ontology#childrenFeatures",
-        "Country": "http://www.geonames.org/ontology#countryCode",
-        "Population": "http://www.geonames.org/ontology#population",
-        "Latitude": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
-        "Longitude": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
-        "Altitude": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
-      }
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
     },
     "subauthorities": {
       "person":         "Person",
@@ -91,3 +81,4 @@
     }
   }
 }
+
