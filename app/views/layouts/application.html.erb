@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>QaServer</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Lookup Server for Cornell</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<section class="cornell-identity" aria-label="Cornell" role="banner">
+  <div id="skiptocontent"><a href="#maincontent">skip to main content</a></div>
+  <div class="container">
+    <a id="logo" class="navbar-brand" href="<%= main_app.root_path %>" data-no-turbolink="true">
+      <span class="institution_name"><%= t("application_name") %></span>
+    </a>
+  </div> <!-- /container -->
+</section>
+
+  <div class="container">
+    <nav id="masthead" class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <ul class="nav_menu">
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}" %>">Home</a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}authority_status" %>">Server Status</a></li>
+            <li class="right_menu"><a href="http://www.cornell.edu/">Cornell University</a></li>
+            <li class="right_menu"><a href="http://www.library.cornell.edu/">Cornell Library</a></li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+    </div>
+  </div>
+
+<div id="content-wrapper" class="container" role="main">
+  <a name="skip_to_content"></a>
+  <%# = render '/flash_msg' %>
+  <% if content_for?(:page_header) %>
+      <div class="row">
+        <div class="col-xs-12 main-header">
+          <%= yield(:page_header) %>
+        </div>
+      </div>
+  <% end %>
+
+  <%= content_for?(:content) ? yield(:content) : yield %>
+</div><!-- /#content-wrapper -->
+<%= render 'shared/footer' %>
+<%# = render 'shared/ajax_modal' %>
+</body>
 </html>

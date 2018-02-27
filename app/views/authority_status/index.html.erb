@@ -1,0 +1,26 @@
+<h1><%= t('application_name') %>: Status</h1>
+
+NOTE: URLs with an encoded URI for term fetch do not work in Chrome because Chrome unencodes the periods.
+Firefox and Safari on a Mac work fine.
+
+<table class="status">
+  <tr>
+    <th>Status</th>
+    <th>Authority</th>
+    <th>Subauthority</th>
+    <th>Service</th>
+    <th>Action</th>
+    <th>URL</th>
+  </tr>
+  <% @all_status.each do |status| %>
+  <tr>
+    <td class="<%= "status_#{status[:status].to_s}" %>"><%= status[:status_label] %></td>
+    <td><%= status[:authority] %></td>
+    <td><%= status[:subauth] %></td>
+    <td><%= status[:service] %></td>
+    <td><%= status[:action] %></td>
+    <td><a href="<%= status[:url] %>"><%= status[:url] %></a></td>
+  </tr>
+  <% end %>
+</table>
+

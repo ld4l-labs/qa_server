@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  resources :homepage, only: 'index'
+
+  # Route the home page as the root
+  root to: 'homepage#index'
+
   mount Qa::Engine => '/qa'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :authority_status, only: 'index'
 end
