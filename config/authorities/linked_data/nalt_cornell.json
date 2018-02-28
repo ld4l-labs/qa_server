@@ -3,7 +3,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://skosmos.library.cornell.edu/rest/v1/nalt/data?uri={?term_uri}",
+      "template": "http://api.library.cornell.edu/skosmos/rest/v1/nalt/data?uri={?term_uri}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -11,7 +11,7 @@
           "variable": "term_uri",
           "property": "hydra:freetextQuery",
           "required": true,
-          "encode":   true
+          "encode":   false
         }
       ]
     },
@@ -32,7 +32,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://skosmos.library.cornell.edu/rest/v1/nalt/search/?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
+      "template": "http://api.library.cornell.edu/skosmos/rest/v1/nalt/search?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {

@@ -1,26 +1,51 @@
+<script>
+  function validate_authority(form) {
+    form.submit();
+    document.getElementById('status_loading_message').style.display = 'block';
+    document.getElementById('status_section').style.display = 'none';
+  }
+</script>
+
 <h1><%= t('application_name') %>: Status</h1>
 
-NOTE: URLs with an encoded URI for term fetch do not work in Chrome because Chrome unencodes the periods.
-Firefox and Safari on a Mac work fine.
+<form class="simple_form editor" id="edit_collection_5h73pw05j" action="/authority_status" accept-charset="UTF-8" method="get">
+  <select name="authority" id="authority" class="string multi_value optional form-control form-control multi-text-field" value="" aria-labelledby="authority" onchange="validate_authority(this.form)">
+    <option value="">Select authority...</option>
+    <option disabled>──────────</option>
+    <option value="<%= AuthorityStatusController::ALL_AUTHORITIES %>"><%= t('authority_status.show_all') %></option>
+    <option disabled>──────────</option>
+    <%= @authorities_list.each do |auth_name| %>
+        <option value="<%= auth_name %>"><%= auth_name.upcase %></option>
+    <% end %>
+  </select>
+</form>
 
-<table class="status">
-  <tr>
-    <th>Status</th>
-    <th>Authority</th>
-    <th>Subauthority</th>
-    <th>Service</th>
-    <th>Action</th>
-    <th>URL</th>
-  </tr>
-  <% @all_status.each do |status| %>
-  <tr>
-    <td class="<%= "status_#{status[:status].to_s}" %>"><%= status[:status_label] %></td>
-    <td><%= status[:authority] %></td>
-    <td><%= status[:subauth] %></td>
-    <td><%= status[:service] %></td>
-    <td><%= status[:action] %></td>
-    <td><a href="<%= status[:url] %>"><%= status[:url] %></a></td>
-  </tr>
-  <% end %>
-</table>
+<div id="status_loading_message" class="wait-message"><%= t('authority_status.wait_message') %></div>
 
+
+<% if @all_status.present? %>
+
+<div id="status_section" class="status-section">
+  <p><b><%= t('authority_status.chrome_unencoding_msg') %></b></p>
+  <table class="status">
+    <tr>
+      <th>Status</th>
+      <th>Authority</th>
+      <th>Subauthority</th>
+      <th>Service</th>
+      <th>Action</th>
+      <th>URL</th>
+    </tr>
+    <% @all_status.each do |status| %>
+    <tr>
+      <td class="<%= "status_#{status[:status].to_s}" %>"><%= status[:status_label] %></td>
+      <td><%= status[:authority] %></td>
+      <td><%= status[:subauth] %></td>
+      <td><%= status[:service] %></td>
+      <td><%= status[:action] %></td>
+      <td><a href="<%= status[:url] %>"><%= status[:url] %></a></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<% end %>

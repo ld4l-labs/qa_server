@@ -36,3 +36,7 @@ en:
     copyright_html: "<strong>Copyright &copy; 2018 Cornell</strong> Licensed under the Apache License, Version 2.0"
     service_html: A service of <a href="http://www.library.cornell.edu/" class="navbar-link" target="_blank">Cornell University Library</a>.
     disclaimer_html: This service is supported by work on <a href="http://ld4l.org" class="navbar-link" target="_blank">LD4L Labs</a> and the <a href="http://samvera.org" class="navbar-link" target="_blank">Samvera community</a>.
+  authority_status:
+    show_all: "ALL Authorities"
+    wait_message: "Please wait while the status is verified.  This will be slow if you selected ALL Authorities."
+    chrome_unencoding_msg: "NOTE: URLs with an encoded URI for term fetch do not work in Chrome because Chrome unencodes the periods.  Firefox and Safari on a Mac work fine."
