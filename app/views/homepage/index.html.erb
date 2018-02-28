@@ -6,15 +6,16 @@
   <p>This provides a service that allows for lookup of a single term or searching for terms matching a query.</p>
 
   <h2>List of Authorities:</h2>
-  <p>See the <a href="<%= "#{main_app.root_path}authority_status" %>">Server Status</a> a list of supported authorities and sample URLs for each authority.</p>
+  <p>See the <a href="<%= "#{main_app.root_path}authority_status" %>">Server Status</a> for a list of supported
+    authorities and sample URLs for each authority.</p>
 
   <p><b>NOTE: The status page is slow to load because it is checking a large number of authority URLs.</b></p>
 
   <h2>Usage:</h2>
   <h3>To search for matching terms:</h3>
 
-  The query parameter <b>q</b> is required.  All other parameters are optional.  Some authorities support different
-  optional parameters, but attempts were made to keep optional parameter names consistent between authorities.
+  <p>The query parameter <b>q</b> is required.  All other parameters are optional.  Some authorities support different
+  optional parameters, but attempts were made to keep optional parameter names consistent between authorities.</p>
 
   <h4>Without subauthority:</h4>
   <pre>http://lookup.ld4l.org/qa/search/linked_data/locnames_ld4l_cache?q=mark twain&maxRecords=4&lang=en</pre>
