@@ -19,6 +19,10 @@
     padding-right: 0px;
 }
 
+footer {
+    margin-top: 50px;
+}
+
 div#content-wrapper {
     padding-left: 15px;
     padding-right: 15px;
@@ -82,7 +86,21 @@ div.page_description {
     padding-bottom: 50px;
 }
 
-/* Status table */
+/* Status page */
+
+div.wait-message {
+    display: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid red;
+    padding: 20px;
+    text-align: center;
+}
+
+div.status-section {
+    margin-top: 50px;
+}
+
 table {
     border-collapse: collapse;
     margin-bottom: 20px;
