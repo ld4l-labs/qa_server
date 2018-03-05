@@ -18,7 +18,6 @@ class AuthorityStatusController < ApplicationController
 
     def authorities_list
       @authorities_list ||= ['agrovoc_direct',
-                             'agrovoc_direct',
                              'agrovoc_ld4l_cache',
                              'dbpedia_direct',
                              'dbpedia_ld4l_cache',
@@ -343,14 +342,34 @@ class AuthorityStatusController < ApplicationController
         authority.search('mark twain', replacements: { maxRecords: MAX_RECORDS })
       end
 
-      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/personal_name?q=mark twain&maxRecords=#{MAX_RECORDS}"
-      test_status(authority_name, 'personal_name', service, 'search', url, 150) do
-        authority.search('mark twain', subauth: 'personal_name', replacements: { maxRecords: MAX_RECORDS })
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/concept?q=ferret&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'concept', service, 'search', url) do
+        authority.search('ferret', subauth: 'concept', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/event?q=tribunal&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'event', service, 'search', url) do
+        authority.search('tribunal', subauth: 'event', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/intangible?q=mark twain&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'intangible', service, 'search', url) do
+        authority.search('mark twain', subauth: 'intangible', replacements: { maxRecords: MAX_RECORDS })
       end
 
       url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/organization?q=mark twain&maxRecords=#{MAX_RECORDS}"
       test_status(authority_name, 'organization', service, 'search', url) do
         authority.search('mark twain', subauth: 'organization', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/person?q=mark twain&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'person', service, 'search', url, 150) do
+        authority.search('mark twain', subauth: 'person', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/work?q=mark twain&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'work', service, 'search', url, 150) do
+        authority.search('mark twain', subauth: 'work', replacements: { maxRecords: MAX_RECORDS })
       end
     end
 end
