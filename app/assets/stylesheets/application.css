@@ -90,11 +90,18 @@ div.page_description {
 
 div.wait-message {
     display: none;
+    font-family: "Arial", sans-serif;
     margin-top: 50px;
     margin-bottom: 50px;
-    border: 1px solid red;
+    margin-left: 90px;
+    margin-right: 90px;
+    border: 1px solid #b30000;
     padding: 20px;
     text-align: center;
+    background-color: #ffffe6;
+    color: #4d0000;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 div.status-section {
@@ -104,12 +111,17 @@ div.status-section {
 table {
     border-collapse: collapse;
     margin-bottom: 20px;
+    background-color: white;
 }
 table, th, td {
     border: 1px solid darkgray;
     padding: 5px;
 }
 
+th {
+    background-color: #222;
+    color: white;
+}
 .status_good {
     text-align: center;
     background-color: #ccffcc;

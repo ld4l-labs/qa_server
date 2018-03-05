@@ -40,3 +40,10 @@ en:
     show_all: "ALL Authorities"
     wait_message: "Please wait while the status is verified.  This will be slow if you selected ALL Authorities."
     chrome_unencoding_msg: "NOTE: URLs with an encoded URI for term fetch do not work in Chrome because Chrome unencodes the periods.  Firefox and Safari on a Mac work fine."
+    status_table:
+      status:       Status
+      authority:    Authority
+      subauthority: Subauthority
+      service:      Service
+      action:       Action
+      url:          Sample URL
