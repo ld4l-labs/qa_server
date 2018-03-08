@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/samvera/questioning_authority.git
-  revision: ec34eb9dd6b156b58d855b5f0705dffa2d4b524a
+  revision: 44d0bd92f44179a23287a94b4e0b210406607658
   branch: min_context
   specs:
     qa (2.0.1)
@@ -86,7 +86,7 @@ GEM
       sxp (~> 1.0)
     equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
-    erubi (1.7.0)
+    erubi (1.7.1)
     execjs (2.7.0)
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
@@ -164,7 +164,7 @@ GEM
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.4)
-    rack-test (0.8.2)
+    rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rails (5.1.5)
       actioncable (= 5.1.5)
