@@ -44,7 +44,7 @@
           "variable": "subauth",
           "property": "hydra:freetextQuery",
           "required": false,
-          "default": ""
+          "default": "all"
         },
         {
           "@type": "IriTemplateMapping",
@@ -78,16 +78,23 @@
         "Population": "http://www.geonames.org/ontology#population",
         "Latitude": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
         "Longitude": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
-        "Altitude": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+        "Altitude": "http://www.w3.org/2003/01/geo/wgs84_pos#alt",
+        "Feature Class": "http://www.geonames.org/ontology#featureClass",
+        "Feature Code": "http://www.geonames.org/ontology#featureCode"
       }
     },
     "subauthorities": {
-      "person":         "Person",
-      "organization":   "Organization",
-      "place":          "Place",
-      "intangible":     "Intangible",
-      "geocoordinates": "GeoCoordinates",
-      "work":           "Work"
+      "area":           "A",
+      "place":          "P",
+      "area_and_place": "AP",
+      "water":          "H",
+      "park":           "L",
+      "road":           "R",
+      "spot":           "S",
+      "terrain":        "T",
+      "undersea":       "U",
+      "vegetation":     "V",
+      "all":            "all"
     }
   }
 }

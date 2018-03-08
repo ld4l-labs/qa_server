@@ -156,6 +156,56 @@ class AuthorityStatusController < ApplicationController
       test_status(authority_name, '', service, 'search', url) do
         authority.search('Ithaca', replacements: { maxRecords: MAX_RECORDS })
       end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/area?q=France&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'area', service, 'search', url) do
+        authority.search('France', subauth: 'area', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/place?q=Ithaca&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'place', service, 'search', url) do
+        authority.search('Ithaca', subauth: 'place', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/area_and_place?q=Ithaca&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'area_and_place', service, 'search', url) do
+        authority.search('Ithaca', subauth: 'area_and_place', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/water?q=Cayuga&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'water', service, 'search', url) do
+        authority.search('Cayuga', subauth: 'water', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/park?q=Cayuga&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'park', service, 'search', url) do
+        authority.search('Cayuga', subauth: 'park', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/road?q=Cayuga&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'road', service, 'search', url) do
+        authority.search('Cayuga', subauth: 'road', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/spot?q=Cayuga&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'spot', service, 'search', url) do
+        authority.search('Cayuga', subauth: 'spot', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/terrain?q=Cayuga&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'terrain', service, 'search', url) do
+        authority.search('Cayuga', subauth: 'terrain', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/undersea?q=Pacific&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'undersea', service, 'search', url) do
+        authority.search('Pacific', subauth: 'undersea', replacements: { maxRecords: MAX_RECORDS })
+      end
+
+      url = "#{main_app.root_path}qa/search/linked_data/#{authority_name.downcase}/vegetation?q=Red&maxRecords=#{MAX_RECORDS}"
+      test_status(authority_name, 'vegetation', service, 'search', url) do
+        authority.search('Red', subauth: 'vegetation', replacements: { maxRecords: MAX_RECORDS })
+      end
     end
 
     def validate_loc_direct
