@@ -31,10 +31,15 @@
 
 en:
   application_version: "0.1.0"
-  application_name: "Cornell Authority Lookup Service"
+  application_name: "Authority Lookup Service"
+  menu:
+    home: Home
+    usage: Usage
+    authorities: Authorities
+    status: Status
   footer:
     copyright_html: "<strong>Copyright &copy; 2018 Cornell</strong> Licensed under the Apache License, Version 2.0"
-    service_html: A service of <a href="http://www.library.cornell.edu/" class="navbar-link" target="_blank">Cornell University Library</a>.
+    service_html: A service of <a href="http://www.library.cornell.edu/" class="navbar-link" target="_blank">Cornell University Library</a> and <br /><a href="https://www.slis.uiowa.edu/" class="navbar-link" target="_blank">University of Iowa, School of Library and Information Science</a>.
     disclaimer_html: This service is supported by work on <a href="http://ld4l.org" class="navbar-link" target="_blank">LD4L Labs</a> and the <a href="http://samvera.org" class="navbar-link" target="_blank">Samvera community</a>.
   authority_status:
     show_all: "ALL Authorities"

@@ -9,11 +9,12 @@
 </head>
 
 <body>
-<section class="cornell-identity" aria-label="Cornell" role="banner">
+<section class="ld4l-identity" aria-label="Cornell" role="banner">
   <div id="skiptocontent"><a href="#maincontent">skip to main content</a></div>
   <div class="container">
+    <a href="<%= main_app.root_path %>"><img src="<%= image_url('LD4L-bg.png') %>" class="header-logo"></a>
     <a id="logo" class="navbar-brand" href="<%= main_app.root_path %>" data-no-turbolink="true">
-      <span class="institution_name"><%= t("application_name") %></span>
+      <span class="institution-name"><%= t("application_name") %></span>
     </a>
   </div> <!-- /container -->
 </section>
@@ -23,10 +24,11 @@
     <div class="container-fluid">
       <div class="navbar-header">
           <ul class="nav_menu">
-            <li class="left_menu"><a href="<%= "#{main_app.root_path}" %>">Home</a></li>
-            <li class="left_menu"><a href="<%= "#{main_app.root_path}authority_status" %>">Server Status</a></li>
-            <li class="right_menu"><a href="http://www.cornell.edu/">Cornell University</a></li>
-            <li class="right_menu"><a href="http://www.library.cornell.edu/">Cornell Library</a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}" %>"><%= t("menu.home") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}usage" %>"><%= t("menu.usage") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}authorities" %>"><%= t("menu.authorities") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}authority_status" %>"><%= t("menu.status") %></a></li>
+            <li class="right_menu"><a href="http://ld4l.org/" target="_blank">LD4L Gateway</a></li>
           </ul>
         </div>
       </div>
