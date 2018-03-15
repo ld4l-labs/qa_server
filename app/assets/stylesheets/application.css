@@ -120,8 +120,20 @@ div.page_description {
     padding-bottom: 50px;
 }
 
-p.welcome {
+p.welcome, p.welcome2 {
     padding-top: 50px;
+    padding-left: 225px;
+    padding-right: 225px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+p.welcome2 {
+    padding-top: 10px;
+}
+
+p.welcome2 a {
+    font-family: "Times New Roman";
 }
 
 /* Dashboard page */
