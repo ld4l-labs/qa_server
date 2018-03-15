@@ -137,13 +137,18 @@ p.welcome2 a {
 }
 
 /* Dashboard page */
-table.dashboard_status td {
+table.dashboard-status td {
     text-align: center;
 }
 
 a.dashboard-refresh {
     margin-left: 20px;
     color: #0088cc;
+}
+
+p.status-update-dtstamp {
+    color: darkred;
+    font-style: italic;
 }
 
 /* Status page */

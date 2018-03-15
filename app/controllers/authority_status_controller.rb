@@ -16,7 +16,7 @@ class AuthorityStatusController < ApplicationController
 
   def dashboard
     @latest_status = CronAuthorityStatus.first
-    if refresh || @latest_status.blank? || @latest_status.dt_stamp < DateTime.yesterday.midnight
+    if refresh || @latest_status.blank? || @latest_status.dt_stamp < yesterday_midnight_et
       test_count = 0
       failure_count = 0
       authorities_list.each do |auth_name|
@@ -24,7 +24,7 @@ class AuthorityStatusController < ApplicationController
         failure_count += AuthorityValidatorService.failure_count(auth_name)
       end
       @latest_status = CronAuthorityStatus.new if @latest_status.blank?
-      @latest_status.dt_stamp = Time.now
+      @latest_status.dt_stamp = dt_stamp_now_et
       @latest_status.test_count = test_count
       @latest_status.failure_count = failure_count
       @latest_status.save
@@ -34,6 +34,14 @@ class AuthorityStatusController < ApplicationController
   end
 
   private
+    def yesterday_midnight_et
+      (DateTime.yesterday.midnight.to_time + 4.hours).to_datetime.in_time_zone("Eastern Time (US & Canada)")
+    end
+
+    def dt_stamp_now_et
+      Time.now.in_time_zone("Eastern Time (US & Canada)")
+    end
+
     def authority_name
       return nil unless params.key? :authority
       params[:authority].downcase

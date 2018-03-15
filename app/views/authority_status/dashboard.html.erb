@@ -11,7 +11,7 @@
   <h2>Dashboard:</h2>
 
   <div id="status_section" class="status-section">
-    <table class="dashboard_status">
+    <table class="dashboard-status">
       <tr>
         <th>Number of Authorities</th>
         <th>Passing Tests</th>
@@ -25,7 +25,8 @@
         <td><%= @latest_status.test_count %></td>
       </tr>
     </table>
-    <p>Status last updated: <%= @latest_status.dt_stamp %>
+<%# byebug %>
+    <p class="status-update-dtstamp"><i>Status last updated:</i> <%= @latest_status.dt_stamp.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%y - %I:%M %p") %> ET
       <% #<a class="dashboard-refresh" href="< %= main_app.dashboard_path % >?refresh">>> Recheck status now</a> %>
     </p>
   </div>
