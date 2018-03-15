@@ -1,0 +1,40 @@
+<div class="page_description">
+
+  <h2>List of Authorities:</h2>
+  <p>See the <a href="<%= "#{main_app.root_path}authority_status" %>">Server Status</a> to test whether an authority is online.</p>
+
+    <div id="status_section" class="status-section">
+      <table class="status">
+        <tr>
+          <th><%= t('authority_status.status_table.authority') %></th>
+          <th><%= t('authority_status.status_table.action') %></th>
+          <th><%= t('authority_status.status_table.url') %></th>
+        </tr>
+        <% @authorities_and_urls_list.keys.sort.each do |authority_name| %>
+          <% if @authorities_and_urls_list[authority_name][:term].present? %>
+            <tr>
+              <td><%= authority_name %></td>
+              <td>term</td>
+              <td>
+                <% @authorities_and_urls_list[authority_name][:term].each do |url| %>
+                  <a href="<%= url %>"><%= url %></a><br>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          <% if @authorities_and_urls_list[authority_name][:search].present? %>
+            <tr>
+              <td><%= authority_name %></td>
+              <td>search</td>
+              <td>
+                <% @authorities_and_urls_list[authority_name][:search].each do |url| %>
+                    <a href="<%= url %>"><%= url %></a><br>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+
+</div>

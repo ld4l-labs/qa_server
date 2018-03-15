@@ -24,7 +24,7 @@
 
 <div id="status_loading_message" class="wait-message"><%= t('authority_status.wait_message') %></div>
 
-<% if @all_status.present? %>
+<% if @status_data.present? %>
 <div id="status_section" class="status-section">
   <p><b><%= t('authority_status.chrome_unencoding_msg') %></b></p>
   <table class="status">
@@ -36,7 +36,7 @@
       <th><%= t('authority_status.status_table.action') %></th>
       <th><%= t('authority_status.status_table.url') %></th>
     </tr>
-    <% @all_status.each do |status| %>
+    <% @status_data.each do |status| %>
     <tr>
       <td class="<%= "status_#{status[:status].to_s}" %>"><%= status[:status_label] %></td>
       <td><%= status[:authority] %></td>

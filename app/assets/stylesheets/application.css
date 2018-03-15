@@ -124,6 +124,16 @@ p.welcome {
     padding-top: 50px;
 }
 
+/* Dashboard page */
+table.dashboard_status td {
+    text-align: center;
+}
+
+a.dashboard-refresh {
+    margin-left: 20px;
+    color: #0088cc;
+}
+
 /* Status page */
 
 div.wait-message {
@@ -157,9 +167,10 @@ table, th, td {
 }
 
 th {
-    background-color: #222;
-    color: white;
+    background-color: #a1b1c4;
+    color: black;
 }
+
 .status_good {
     text-align: center;
     background-color: #ccffcc;

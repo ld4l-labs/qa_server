@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/samvera/questioning_authority.git
-  revision: 44d0bd92f44179a23287a94b4e0b210406607658
+  revision: 49cd9f0d3eb04a04be91c8a8f678e9477952dd3b
   branch: min_context
   specs:
     qa (2.0.1)
