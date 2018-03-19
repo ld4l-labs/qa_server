@@ -7,7 +7,7 @@
   optional parameters, but attempts were made to keep optional parameter names consistent between authorities.</p>
 
   <h4>Without subauthority:</h4>
-  <pre>http://lookup.ld4l.org/qa/search/linked_data/locnames_ld4l_cache?q=mark twain&maxRecords=4&lang=en</pre>
+  <pre>https://lookup.ld4l.org/qa/search/linked_data/locnames_ld4l_cache?q=mark%20twain&maxRecords=4&lang=en</pre>
 
   where,
   <ul>
@@ -19,7 +19,7 @@
   </ul>
 
   <h4>With subauthority</h4>
-  <pre>http://lookup.ld4l.org/qa/search/linked_data/locnames_ld4l_cache/person?q=mark twain&maxRecords=4&lang=en</pre>
+  <pre>https://lookup.ld4l.org/qa/search/linked_data/locnames_ld4l_cache/person?q=mark%20twain&maxRecords=4&lang=en</pre>
 
   where,
   <ul>
@@ -60,6 +60,7 @@
 
   <h4>Fetch by URI</h4>
   <pre>http://lookup.ld4l.org/qa/show/linked_data/locnames_ld4l_cache/http%3A%2F%2Fid%2Eloc%2Egov%2Fauthorities%2Fnames%2Fn92016188</pre>
+  <p><b><%= t('authority_status.chrome_unencoding_msg') %></b></p>
 
   where,
   <ul>
