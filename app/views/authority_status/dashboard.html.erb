@@ -1,0 +1,34 @@
+<script>
+  function validate_authority(form) {
+    form.submit();
+    document.getElementById('status_loading_message').style.display = 'block';
+    document.getElementById('status_section').style.display = 'none';
+  }
+</script>
+
+<div class="page_description">
+
+  <h2>Dashboard:</h2>
+
+  <div id="status_section" class="status-section">
+    <table class="dashboard-status">
+      <tr>
+        <th>Number of Authorities</th>
+        <th>Passing Tests</th>
+        <th>Failing Tests</th>
+        <th>TOTAL Tests</th>
+      </tr>
+      <tr>
+        <td><%= @authority_count %></td>
+        <td><%= @latest_status.test_count - @latest_status.failure_count %></td>
+        <td><%= @latest_status.failure_count %></td>
+        <td><%= @latest_status.test_count %></td>
+      </tr>
+    </table>
+<%# byebug %>
+    <p class="status-update-dtstamp"><i>Status last updated:</i> <%= @latest_status.dt_stamp.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%y - %I:%M %p") %> ET
+      <% #<a class="dashboard-refresh" href="< %= main_app.dashboard_path % >?refresh">>> Recheck status now</a> %>
+    </p>
+  </div>
+
+</div>

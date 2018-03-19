@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>QaServer</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Lookup Server for Cornell</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<section class="ld4l-identity" aria-label="Cornell" role="banner">
+  <div id="skiptocontent"><a href="#maincontent">skip to main content</a></div>
+  <div class="container">
+    <a href="<%= main_app.root_path %>"><img src="<%= image_url('LD4L-bg.png') %>" class="header-logo"></a>
+    <a id="logo" class="navbar-brand" href="<%= main_app.root_path %>" data-no-turbolink="true">
+      <span class="institution-name"><%= t("application_name") %></span>
+    </a>
+  </div> <!-- /container -->
+</section>
+
+  <div class="container">
+    <nav id="masthead" class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <ul class="nav_menu">
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}" %>"><%= t("menu.home") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}usage" %>"><%= t("menu.usage") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}dashboard" %>"><%= t("menu.dashboard") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}authorities" %>"><%= t("menu.authorities") %></a></li>
+            <li class="left_menu"><a href="<%= "#{main_app.root_path}authority_status" %>"><%= t("menu.status") %></a></li>
+            <li class="right_menu"><a href="http://ld4l.org/" target="_blank">LD4L Gateway</a></li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+    </div>
+  </div>
+
+<div id="content-wrapper" class="container" role="main">
+  <a name="skip_to_content"></a>
+  <%# = render '/flash_msg' %>
+  <% if content_for?(:page_header) %>
+      <div class="row">
+        <div class="col-xs-12 main-header">
+          <%= yield(:page_header) %>
+        </div>
+      </div>
+  <% end %>
+
+  <%= content_for?(:content) ? yield(:content) : yield %>
+</div><!-- /#content-wrapper -->
+<%= render 'shared/footer' %>
+<%# = render 'shared/ajax_modal' %>
+</body>
 </html>
