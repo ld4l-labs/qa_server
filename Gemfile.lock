@@ -1,3 +1,16 @@
+GIT
+  remote: https://github.com/samvera/questioning_authority.git
+  revision: 49cd9f0d3eb04a04be91c8a8f678e9477952dd3b
+  branch: min_context
+  specs:
+    qa (2.0.1)
+      activerecord-import
+      deprecation
+      faraday
+      nokogiri (~> 1.6)
+      rails (~> 5.0)
+      rdf
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,7 +46,7 @@ GEM
       activemodel (= 5.1.4)
       activesupport (= 5.1.4)
       arel (~> 8.0)
-    activerecord-import (0.20.2)
+    activerecord-import (0.24.0)
       activerecord (>= 3.2)
     activesupport (5.1.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -75,7 +88,7 @@ GEM
       nokogiri (>= 1.4.3)
     erubi (1.7.0)
     execjs (2.7.0)
-    faraday (0.13.1)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     globalid (0.4.0)
@@ -153,13 +166,6 @@ GEM
       mini_portile2 (~> 2.3.0)
     public_suffix (3.0.0)
     puma (3.10.0)
-    qa (2.0.0)
-      activerecord-import
-      deprecation
-      faraday
-      nokogiri (~> 1.6)
-      rails (~> 5.0)
-      rdf
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
@@ -326,7 +332,7 @@ DEPENDENCIES
   linkeddata
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
-  qa (~> 2.0)
+  qa!
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
   selenium-webdriver
@@ -339,4 +345,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.13.7
+   1.16.2
