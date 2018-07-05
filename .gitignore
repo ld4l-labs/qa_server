@@ -54,3 +54,4 @@ reports
 
 # ignore persisting example file
 /spec/examples.txt
+.DS_Store
