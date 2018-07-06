@@ -39,23 +39,14 @@ There are a few authorities that are part of the QA gem.  All directly access th
   
 ### Predefined Configurations in ld4l-labs/linked_data_authorities
 
-Configurations exist for a number of other common authorities that can be copied into your QA Server.  When possible, each configuration comes in two varieties...
+All authorities defined in [ld4l-labs/linked_data_authorities](https://github.com/ld4l-labs/linked_data_authorities) are included in this repository.  In your copy/fork of this app, you can remove the configuration and validation files for any authorities you do not want to support.
+
+Configurations exist for a number of other common authorities that can be used by your QA Server.  When possible, each configuration comes in two varieties...
 
 * _AUTHORITY_NAME__direct - configuration can be used as is to access the external authority directly
 * _AUTHORITY_NAME__local - configuration may require an update to the search:url:template and term:url:template to point to your local server.  More information on this in [ld4l-labs/linked_data_authorities](https://github.com/ld4l-labs/linked_data_authorities/blob/master/README.md)
 
-Copy predefined configurations...
- 
-```
-FROM:  https://github.com/ld4l-labs/linked_data_authorities/qa_*/config/authorities/linked_data
-TO:    this_app/config/authorities/linked_data
-```
-
-TEST QUERY: http://localhost:3000/qa/search/linked_data/_AUTHORITY_NAME__direct?q=your_query&maxRecords=3
-TEST FETCH: http://localhost:3000/qa/show/linked_data/_AUTHORITY_NAME__direct/_ID_OR_URI_
-
-Substitute the name of the configuration file for _AUTHORITY_NAME__direct in the URL.
-Substitute a valid ID or URI for _ID_OR_URI_ in the URL, as appropriate.  NOTE: Some authorities expect an ID and others expect a URI.
+Configurations define how to access an authority and how to decode the ontology predicates to extract and convert the data to normalized data.  The predefined configurations live in [qa_server/config/authorities/linked_data](https://github.com/ld4l-labs/qa_server/tree/master/config/authorities/linked_data).
 
 ### Write your own configuration
 
@@ -75,7 +66,7 @@ Instructions for writing your own configuration can be found in the ([QA gem REA
 * maxRecords - to identify the max number of records for the authority to return if the authority supports limiting the number of returned records
 * lang - limit string values to the identified language if the authority supports language specific requests
 
-#### Using the configuration
+## Using the configuration
 
 Add your new configuration to `this_app/config/authorities/linked_data`
 
@@ -86,20 +77,9 @@ Substitute the name of the configuration file for _AUTHORITY_NAME__direct in the
 Substitute a valid ID or URI for _ID_OR_URI_ in the URL, as appropriate.  NOTE: Some authorities expect an ID and others expect a URI.
 
 
-### Non linked-data authority access
+### Expected Results
 
-QA Server is based on the [Questioning Authority gem](https://github.com/samvera/questioning_authority).  As such, it can be used to serve up controlled vocabularies defined in one of three ways.
-
-1. locally defined controlled vocabularies
-1. specifically supported external authorities (non-linked data)
-1. configurable access to linked data authorities
-
-This document addresses the use of QA Server app for access to linked data authorities.  You can reference Questioning Authorities
-[documentation](https://github.com/samvera/questioning_authority/blob/master/README.md) for more information on the other uses.
-
-## Expected Results
-
-### Search Query Results
+#### Search Query Results
 
 This search query... http://localhost:3000/qa/search/linked_data/oclc_fast/personal_name?q=Cornell&maximumRecords=3
               
@@ -111,7 +91,7 @@ will return results like...
  {"uri":"http://id.worldcat.org/fast/409667","id":"409667","label":"Cornell, Ezra, 1807-1874"}]
 ```
 
-### Term Fetch Results
+#### Term Fetch Results
 
 This term fetch... http://localhost:3000/qa/show/linked_data/oclc_fast/530369
                    
@@ -131,3 +111,25 @@ will return results like...
    "http://www.w3.org/2004/02/skos/core#altLabel":["Ithaca (N.Y.). Cornell University","Kornelʹskii universitet","Kʻang-nai-erh ta hsüeh"],
    "http://schema.org/sameAs":["http://id.loc.gov/authorities/names/n79021621","https://viaf.org/viaf/126293486"]}}
 ```
+
+## Connection and Accuracy Validations
+
+Validations come in two flavors...
+* connection validation - PASS if a request gets back a specified minimum size result set from an authority; otherwise, FAIL.  
+* accuracy test - PASS if a specific result is returned by a specified position (e.g. uri is in the top 10 results); otherwise, FAIL.
+
+The validations can be defined in a file with a matching file name in the [scenarios directory](https://github.com/ld4l-labs/qa_server/tree/master/config/authorities/linked_data/scenarios).  For example, direct access to the AgroVoc authority, access is configured in [config/authorities/linked_data/agrovoc_direct.json](https://github.com/ld4l-labs/qa_server/blob/master/config/authorities/linked_data/agrovoc_direct.json) and the validations are defined in [config/authorities/linked_data/scenarios/agrovoc_direct_validation.yml](https://github.com/ld4l-labs/qa_server/blob/master/config/authorities/linked_data/scenarios/agrovoc_direct_validation.yml)
+
+The UI for qa_server provides access to running connection validation and accuracy tests in the Check Status navigation menu item.
+
+## Non linked-data authority access
+
+QA Server is based on the [Questioning Authority gem](https://github.com/samvera/questioning_authority).  As such, it can be used to serve up controlled vocabularies defined in one of three ways.
+
+1. locally defined controlled vocabularies
+1. specifically supported external authorities (non-linked data)
+1. configurable access to linked data authorities
+
+This document addresses the use of QA Server app for access to linked data authorities.  You can reference Questioning Authorities
+[documentation](https://github.com/samvera/questioning_authority/blob/master/README.md) for more information on the other uses.
+
