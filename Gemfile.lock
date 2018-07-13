@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/samvera/questioning_authority.git
-  revision: 49cd9f0d3eb04a04be91c8a8f678e9477952dd3b
+  revision: 7fc60a1a205430774d32cff9dea9993fe68fcb76
   branch: min_context
   specs:
     qa (2.0.1)
@@ -46,7 +46,7 @@ GEM
       activemodel (= 5.1.6)
       activesupport (= 5.1.6)
       arel (~> 8.0)
-    activerecord-import (0.24.0)
+    activerecord-import (0.25.0)
       activerecord (>= 3.2)
     activesupport (5.1.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
